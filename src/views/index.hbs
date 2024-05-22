@@ -1,0 +1,94 @@
+<main class="d-flex">
+  {{>verticalNavigation}}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header">
+            <img class="card-img-top mx-auto" src="/bola-de-hilo.png" alt="Icono de un hilo de algodón"
+              style="width: 45px; height: 45px; display: block;" />
+            <h3 class="text-center">Gestión de Recursos de la Empresa</h3>
+          </div>
+          <div class="card-body text-end">
+            <p class="text-start">Registre la entrada de nuevos materiales, para garantizar un flujo constante y
+              eficiente en el proceso de producción.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Nuevo Material
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir un nuevo material</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/addMat" method="post">
+                      <div class="input-group mt-2">
+                        <label for="name" class="input-group-text">Id Material</label>
+                        <input class="form-control" type="number" name="mat_id" id="mat_id" autofocus required />
+                      </div>
+                      <div class="input-group mt-2">
+                        <label for="lastname" class="input-group-text">Nombre</label>
+                        <input class="form-control" type="text" name="mat_nombre" id="mat_nombre"
+                          placeholder="Ejemplo: Hilo de algodón" required />
+                      </div>
+                      <div class="input-group mt-2">
+                        <label for="Descripcion" class="input-group-text">Descripción</label>
+                        <input class="form-control" type="textarea" name="mat_descripcion" id="mat_descripcion"
+                          placeholder="Ejemplo: Rollo de 100 metros" required />
+                      </div>
+                      <div class="input-group mt-2">
+                        <label for="precio" class="input-group-text">Precio</label>
+                        <input class="form-control" type="number" name="mat_precio" id="mat_precio"
+                          placeholder="Ejemplo: 20000" required />
+                      </div>
+                      <div class="form-group mt-4 gap-2">
+                        <button class="btn btn-success">Agregar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header">
+            <img class="card-img-top mx-auto" src="ganancias.png" alt="Icono de un gráfico de barras"
+              style="width: 45px; height: 45px; display: block;" />
+            <h3 class="text-center">Ganancias Mensuales</h3>
+          </div>
+          <div class="card-body text-end">
+            <p class="text-start">Consulte el desglose detallado de las ganancias obtenidas cada mes para una mejor
+              comprensión del rendimiento financiero.</p>
+            <a href="#" class="btn btn-primary">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header">
+            {{!-- <img class="card-img-top mx-auto m-2" src="/logo.png" alt="logo"
+              style="width: 45px; height: 45px; display: block;" /> --}}
+            <h3 class="text-center">Ventas completadas</h3>
+          </div>
+          <div class="card-body text-center">
+            <p>Todas las ventas que estan con un estado de completo</p>
+            <a href="#" class="btn btn-primary">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,62 @@
+<main class="d-flex">
+    {{>verticalNavigation}}
+    <div class="container mt-2">
+        <div class="row m-auto">
+            <h3 class="text-center p-2" style="">LISTA DE MATERIALES EN BODEGA</h3>
+            {{#if materiales}}
+            <div class="mb-2 d-flex justify-content-end">
+                <a href="/addMat" class="btn btn-primary">
+                    Nuevo Material
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+            <table class="table table-hover shadow">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col" style="width: 5%; text-align: center;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each materiales}}
+                    <tr>
+                        <td>{{mat_id}} </td>
+                        <td>{{mat_nombre}} </td>
+                        <td>{{mat_descripcion}} </td>
+                        <td>{{mat_precio}} </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="/editMat/{{mat_id}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a href="/deleteMat/{{mat_id}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{!-- <tfoot>
+                    <tr class="table-dark">
+                        <td colspan="4">Materia Prima</td>
+                    </tr>
+                </tfoot> --}}
+            </table>
+        </div>
+        {{else }}
+        <div class="card text-center mx-auto" style="width: 350px;">
+            <div class="card_header">
+                <h3>Tabla vacía, ingesa nuevos materiales</h3>
+            </div>
+            <div class="card-body">
+                <p>Preciona para registrar un nuevo material</p>
+                <a href="#" class="btn btn-primary">Nuevo Material</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</main>
