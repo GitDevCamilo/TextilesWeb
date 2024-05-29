@@ -1,0 +1,62 @@
+<div class="conatiner p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3 class="text-uppercase">EDITANDO PRODUCTO </h3>
+        </div>
+        <div class="card-body">
+          <form action="/editProd/{{product.prod_id}}" method="post">
+            <div class="input-group mt-2">
+              <label for="name" class="input-group-text">Id</label>
+              <input
+                value="{{product.prod_id}}"
+                class="form-control"
+                type="number"
+                name="prod_id"
+                id="prod_id"
+                autofocus
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="lastname" class="input-group-text">Precio Unidad</label>
+              <input
+                value="{{product.prod_precioUni}}"
+                class="form-control"
+                type="number"
+                name="prod_precioUni"
+                id="prod_precioUni"
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="age" class="input-group-text">Precio Mayor</label>
+              <input
+                value="{{product.prod_precioMayor}}"
+                class="form-control"
+                type="number"
+                name="prod_precioMayor"
+                id="prod_precioMayor"
+                required
+              />
+            </div><div class="input-group mt-2">
+              <label for="age" class="input-group-text">Tipo</label>
+              <input
+                value="{{product.prod_tipo}}"
+                class="form-control"
+                type="text"
+                name="prod_tipo"
+                id="prod_tipo"
+                required
+              />
+            </div>
+            <div class="form-group mt-4 d-grid gap-2">
+              <button class="btn btn-success">Actualizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

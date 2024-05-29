@@ -5,6 +5,12 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import materialRoutes from "./routes/material.routes.js";
 import clientsRoutes from "./routes/client.routes.js";
+import buyMaterialRoutes from "./routes/buyMaterial.routes.js"; 
+import productRoutes from "./routes/product.routes.js";
+import saleProduct from "./routes/sellProduct.routes.js";
+import sell from "./routes/sell.routes.js";
+import profit from "./routes/profit.routes.js";
+import full from "./routes/full.routes.js";
 
 //Initialion
 const app = express();
@@ -35,6 +41,12 @@ app.get("/", (req, res) => {
 });
 app.use(materialRoutes);
 app.use(clientsRoutes);
+app.use(buyMaterialRoutes);
+app.use(productRoutes);
+app.use(saleProduct);
+app.use(sell);
+app.use(profit);
+app.use(full);
 
 //Public files
 app.use(express.static(join(__dirname, "public")));

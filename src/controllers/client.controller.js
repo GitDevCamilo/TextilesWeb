@@ -1,11 +1,11 @@
 import pool from "../models/database.js";
 
-// Función para mostrar el formulario de añadir un libro
+// Función para mostrar el formulario de añadir un cliente
 export const showAddForm = (req, res) => {
   res.render("clientes/addClie.hbs");
 };
 
-// Función para añadir un libro a la base de datos
+// Función para añadir un cliente a la base de datos
 export const addClient = async (req, res) => {
   try {
     const { clie_id, clie_nombre, clie_apellido, clie_telefono } = req.body;
@@ -29,7 +29,7 @@ export const showClientList = async (req, res) => {
   }
 };
 
-// Función para mostrar el formulario de edición de un libro
+// Función para mostrar el formulario de edición de un cliente
 export const showEditForm = async (req, res) => {
   try {
     const { clie_id } = req.params;
@@ -44,7 +44,7 @@ export const showEditForm = async (req, res) => {
   }
 };
 
-// Función para actualizar la información de un libro en la base de datos
+// Función para actualizar la información de un cliente en la base de datos
 export const editClient = async (req, res) => {
   try {
     const { clie_id } = req.params;
@@ -65,7 +65,7 @@ export const editClient = async (req, res) => {
   }
 };
 
-// Función para eliminar un libro de la base de datos
+// Función para eliminar un cliente de la base de datos
 export const deleteClient = async (req, res) => {
   try {
     const { clie_id } = req.params;

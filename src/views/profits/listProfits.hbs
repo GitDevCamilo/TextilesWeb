@@ -1,0 +1,43 @@
+<main class="d-flex">
+    {{>verticalNavigation}}
+    <div class="container mt-2">
+        <div class="row m-auto">
+            <h3 class="text-center p-2" style="">LISTA DE GANANCIAS MENSUALES</h3>
+            {{#if profits}}
+            <table class="table table-hover shadow">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Año</th>
+                        <th scope="col">Mes</th>
+                        <th scope="col">Total Ventas</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Ganancias</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each profits}}
+                    <tr>
+                        <td>{{Año}} </td>
+                        <td>{{Mes}} </td>
+                        <td>{{Total_Ventas}} </td>
+                        <td>{{Tipo}} </td>
+                        <td>{{Ganancias}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{!-- <tfoot>
+                    <tr class="table-dark">
+                        <td colspan="4">Materia Prima</td>
+                    </tr>
+                </tfoot> --}}
+            </table>
+        </div>
+        {{else }}
+        <div class="card text-center mx-auto" style="width: 350px;">
+            <div class="card_header">
+                <h3>Tabla vacía, aun no hay ventas</h3>
+            </div>
+        {{/if}}
+        </div>
+    </div>
+</main>

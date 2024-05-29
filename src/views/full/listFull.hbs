@@ -1,0 +1,39 @@
+<main class="d-flex">
+    {{>verticalNavigation}}
+    <div class="container mt-2">
+        <div class="row m-auto">
+            <h3 class="text-center p-2" style="">LISTA DE LAS VENTAS COMPLETADAS</h3>
+            {{#if full}}
+            <table class="table table-hover shadow">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Id Venta</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each full}}
+                    <tr>
+                        <td>{{ven_id}} </td>
+                        <td>{{Tipo}} </td>
+                        <td>{{Estado}} </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{!-- <tfoot>
+                    <tr class="table-dark">
+                        <td colspan="4">Materia Prima</td>
+                    </tr>
+                </tfoot> --}}
+            </table>
+        </div>
+        {{else }}
+        <div class="card text-center mx-auto" style="width: 350px;">
+            <div class="card_header">
+                <h3>Tabla vacía, aun no hay ventas</h3>
+            </div>
+        {{/if}}
+        </div>
+    </div>
+</main>

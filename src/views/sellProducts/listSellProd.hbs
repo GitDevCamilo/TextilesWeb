@@ -1,0 +1,60 @@
+<main class="d-flex">
+    {{>verticalNavigation}}
+    <div class="container mt-2">
+        <div class="row m-auto">
+            <h3 class="text-center p-2" style="">LISTA DE LOS PRODUCTOS EN VENTA</h3>
+            {{#if sellProducts}}
+            <div class="mb-2 d-flex justify-content-end">
+                <a href="/addSellProd" class="btn btn-primary">
+                    Nueva Venta de Producto
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+            <table class="table table-hover shadow">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Id</th>
+                        <th scope="col">Id Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col" style="width: 5%; text-align: center;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each sellProducts}}
+                    <tr>
+                        <td>{{ven_id}} </td>
+                        <td>{{prod_id}} </td>
+                        <td>{{prod_cantidad}} </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="/editSellProd/{{ven_id}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a href="/deleteSellProd/{{ven_id}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{!-- <tfoot>
+                    <tr class="table-dark">
+                        <td colspan="4">Materia Prima</td>
+                    </tr>
+                </tfoot> --}}
+            </table>
+        </div>
+        {{else }}
+        <div class="card text-center mx-auto" style="width: 350px;">
+            <div class="card_header">
+                <h3>Tabla vacía, ingesa nuevas ventas de productos</h3>
+            </div>
+            <div class="card-body">
+                <p>Preciona para registrar una nueva venta de producto</p>
+                <a href="#" class="btn btn-primary">Nueva Venta de Poducto</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</main>

@@ -1,11 +1,11 @@
 import pool from "../models/database.js";
 
-// Función para mostrar el formulario de añadir un libro
+// Función para mostrar el formulario de añadir un material
 export const showAddForm = (req, res) => {
   res.render("materiales/addMat.hbs");
 };
 
-// Función para añadir un libro a la base de datos
+// Función para añadir un material a la base de datos
 export const addMaterial = async (req, res) => {
   try {
     const { mat_id, mat_nombre, mat_descripcion, mat_precio } = req.body;
@@ -17,7 +17,7 @@ export const addMaterial = async (req, res) => {
   }
 };
 
-// Función para mostrar la lista de libros
+// Función para mostrar la lista de materials
 export const showMaterialList = async (req, res) => {
   try {
     const [result] = await pool.query("SELECT * FROM tbl_materiaprima");
@@ -27,7 +27,7 @@ export const showMaterialList = async (req, res) => {
   }
 };
 
-// Función para mostrar el formulario de edición de un libro
+// Función para mostrar el formulario de edición de un material
 export const showEditForm = async (req, res) => {
   try {
     const { mat_id } = req.params;
@@ -42,7 +42,7 @@ export const showEditForm = async (req, res) => {
   }
 };
 
-// Función para actualizar la información de un libro en la base de datos
+// Función para actualizar la información de un material en la base de datos
 export const editMaterial = async (req, res) => {
   try {
     const { mat_id } = req.params;
@@ -58,7 +58,7 @@ export const editMaterial = async (req, res) => {
   }
 };
 
-// Función para eliminar un libro de la base de datos
+// Función para eliminar un material de la base de datos
 export const deleteMaterial = async (req, res) => {
   try {
     const { mat_id } = req.params;

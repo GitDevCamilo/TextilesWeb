@@ -1,0 +1,78 @@
+<main class="d-flex">
+    {{>verticalNavigation}}
+    <div class="container mt-2">
+        <div class="row m-auto">
+            <h3 class="text-center p-2" style="">LISTA DE VENTAS</h3>
+            {{#if sell}}
+            <div class="mb-2 d-flex justify-content-end">
+                <a href="/addSell" class="btn btn-primary">
+                    Nueva Venta
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+            <table class="table table-hover shadow">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Id</th>
+                        <th scope="col">Id Cliente</th>
+                        <th scope="col">Administrador</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col" style="width: 5%; text-align: center;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each sell}}
+                    <tr>
+                        <td>{{ven_id}} </td>
+                        <td>{{clie_id}} </td>
+                        <td>{{adm_id}} </td>
+                        <td>{{ven_estado}} </td>
+                        <td class="com-fecha" data-date="{{ven_fecha}}">{{ven_fecha}}</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="/editSell/{{ven_id}}" class="btn btn-warning p-2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a href="/deleteSell/{{ven_id}}" class="btn btn-danger p-2">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{!-- <tfoot>
+                    <tr class="table-dark">
+                        <td colspan="4">Materia Prima</td>
+                    </tr>
+                </tfoot> --}}
+            </table>
+        </div>
+        {{else }}
+        <div class="card text-center mx-auto" style="width: 350px;">
+            <div class="card_header">
+                <h3>Tabla vacía, ingesa nuevas ventas</h3>
+            </div>
+            <div class="card-body">
+                <p>Preciona para registrar una nueva venta</p>
+                <a href="#" class="btn btn-primary">Nueva Venta</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const dateElements = document.querySelectorAll('.com-fecha');
+        dateElements.forEach((el) => {
+            const dateStr = el.getAttribute('data-date');
+            const date = new Date(dateStr);
+            const formattedDate = ('0' + date.getDate()).slice(-2) + '/' +
+                                  ('0' + (date.getMonth() + 1)).slice(-2) + '/' +
+                                  date.getFullYear();
+            el.innerText = formattedDate;
+        });
+    });
+</script>

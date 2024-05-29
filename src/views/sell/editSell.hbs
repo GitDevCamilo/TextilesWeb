@@ -1,0 +1,59 @@
+<div class="conatiner p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3 class="text-uppercase">EDITANDO VENTA</h3>
+        </div>
+        <div class="card-body">
+          <form action="/editSell/{{sell.ven_id}}" method="post">
+            <div class="input-group mt-2">
+              <label for="name" class="input-group-text">Id</label>
+              <input
+                value="{{sell.ven_id}}"
+                class="form-control"
+                type="number"
+                name="ven_id"
+                id="ven_id"
+                autofocus
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="lastname" class="input-group-text">Id Cliente</label>
+              <input
+                value="{{sell.clie_id}}"
+                class="form-control"
+                type="number"
+                name="clie_id"
+                id="clie_id"
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="age" class="input-group-text">Administrador</label>
+              <input
+                value="{{sell.adm_id}}"
+                class="form-control"
+                type="number"
+                name="adm_id"
+                id="adm_id"
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="age" class="input-group-text">Estado</label>
+              <select value="{{sell.ven_estado}}" class="form-control" name="ven_estado" id="ven_estado" required>
+                <option value="Completo">Completo</option>
+                <option value="En proceso">En proceso</option>
+              </select>
+            </div>
+            <div class="form-group mt-4 d-grid gap-2">
+              <button class="btn btn-success">Actualizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="conatiner p-4">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3 class="text-uppercase">AÑADIR UNA NUEVA VENTA</h3>
+        </div>
+        <div class="card-body">
+          <form action="/addSell" method="post">
+            <div class="input-group mt-2">
+              <label for="name" class="input-group-text">Id</label>
+              <input
+                class="form-control"
+                type="number"
+                name="ven_id"
+                id="ven_id"
+                autofocus
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="lastname" class="input-group-text">Id Cliente</label>
+              <input
+                class="form-control"
+                type="number"
+                name="clie_id"
+                id="clie_id"
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="age" class="input-group-text">Id Administrador</label>
+              <input
+                class="form-control"
+                type="number"
+                name="adm_id"
+                id="adm_id"
+                required
+              />
+            </div>
+            <div class="input-group mt-2">
+              <label for="age" class="input-group-text">Estado</label>
+              <select class="form-control" name="ven_estado" id="ven_estado" required>
+                <option value=""></option>
+                <option value="Completo">Completo</option>
+                <option value="En proceso">En proceso</option>
+              </select>
+            </div>
+            <div class="input-group mt-2">
+              <label for="age" class="input-group-text">Fecha</label>
+              <input
+                class="form-control"
+                type="date"
+                name="ven_fecha"
+                id="ven_fecha"
+                required
+              />
+            </div>
+            <div class="form-group mt-4 d-grid gap-2">
+              <button class="btn btn-success">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
