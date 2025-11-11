@@ -1,4 +1,4 @@
-...existing code...
+
 # TextilesWeb — Aplicación CRUD para una microempresa textil
 
 Descripción
@@ -77,4 +77,4 @@ Colaboradores
   - Colaborador 1 <email@example.com>
   - Colaborador 2 <email@example.com>
 
-...existing code...
+
